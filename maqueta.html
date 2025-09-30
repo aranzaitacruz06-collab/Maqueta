@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Hídrico y de Riego</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #006699;
+    }
+    select, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .info-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .info-box img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    .titulo {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sistema Hídrico y de Riego</h1>
+  <p>Selecciona la sección que deseas consultar:</p>
+
+  <select id="menu">
+    <option value="">-- Elige una opción --</option>
+    <option value="presa">1. Presa de almacenamiento</option>
+    <option value="vaso">2. Vaso de la presa</option>
+    <option value="cuenca">3. Cuenca</option>
+    <option value="canalP">4. Canal principal</option>
+    <option value="represas">5. Represa</option>
+    <option value="canalesS">6. Canales secundarios</option>
+    <option value="riegoRodado">7. Riego rodado</option>
+    <option value="dren">8. Dren</option>
+    <option value="olla">9. Olla de agua</option>
+    <option value="pozo">10. Pozo</option>
+    <option value="acui">11. Acuífero subterráneo</option>
+    <option value="goteo">12. Sistema de riego por goteo</option>
+    <option value="solar">13. Sistema solar</option>
+  </select>
+
+  <button onclick="mostrarInfo()">Ver información</button>
+
+  <div id="info" class="info-box"></div>
+
+  <script>
+    function mostrarInfo() {
+      const seccion = document.getElementById("menu").value;
+      const info = {
+        presa: {
+          titulo: "Presa de almacenamiento",
+          texto: "La presa de almacenamiento es una estructura que atraviesa un río con la finalidad de almacenar agua, controlar inundaciones, generar energía hidroeléctrica y abastecer sistemas de riego. Su importancia radica en regular los flujos de agua durante todo el año. La presa consta de una cortina y un vertedor de demasías.",
+        img:"https://www.ecured.cu/images/a/a6/Embalsee.jpg",
+          color: "#d1ecf1"
+        },
+        vaso: {
+          titulo: "Vaso de la Presa",
+          texto: "El vaso de la presa es el espacio donde se acumula el agua retenida. Su capacidad depende de la topografía del terreno y determina la cantidad de agua disponible para riego.",
+          img: "https://www.meganoticias.mx/uploads/noticias/aumenta-nivel-de-la-presa-mocuzarit-supera-el-16-de-su-capacidad-651021.jpg",
+          color: "#d1ecf1"
+        },
+        cuenca: {
+          titulo: "Cuenca",
+          texto: "Una cuenca hidrográfica es el área que capta y conduce el agua de lluvia hacia una corriente principal. Representa una unidad esencial para la gestión y aprovechamiento del recurso hídrico. Está conformada por tres zonas principales: alta, media y baja",
+          img: "https://www.gob.mx/cms/uploads/image/file/516104/que-es-una-cuenca2.jpg",
+          color: "#d4edda"
+        },
+        canalP: {
+          titulo: "Canal Principal",
+          texto: "Los canales principales transportan agua desde la presa hacia diferentes zonas agrícolas. Su diseño permite un flujo constante y controlado.",
+          img: "https://www.debate.com.mx/__export/1690586970912/sites/debate/img/2023/07/28/amlo_pone_en_operacixn_el_sistema_de_riego_de_la_presa_picachos_en_sinaloa_x1x.jpeg_172596871.jpeg",
+          color: "#fff3cd"
+        },
+        represas: {
+          titulo: "Represas",
+          texto: "Las represas complementan a la presa principal, ayudando a distribuir el agua localmente y evitando pérdidas.",
+          img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Floodgate_drum.JPG/1024px-Floodgate_drum.JPG",
+          color: "#e2e3e5"
+        },
+        canalesS: {
+          titulo: "Canales Secundarios",
+          texto: "Distribuyen el agua desde los canales principales hasta parcelas individuales, optimizando el reparto en las zonas agrícolas.",
+          img: "https://www.indap.gob.cl/sites/default/files/mejoras-en-canales-de-valpara%C3%ADso.jpg",
+          color: "#d1ecf1"
+        },
+        riegoRodado: {
+          titulo: "Riego Rodado",
+          texto: "El riego rodado o por gravedad, es aquel donde el agua se aplica sobre la superficie del suelo y se distribuye en la parcela aprovechando la fuerza de gravedad o pendiente. Es el método de riego más tradicional pero menos eficiente.",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQttFEa4_ePdMxOj-NATi67Esg5hV1QRlOzm6b3vINFfiqmAt4Be6-3-yuRFQBBZjuDguQ&usqp=CAU",
+          color: "#d1ecf1"
+        },
+        dren: {
+          titulo: "Dren",
+          texto: "Los drenes son sistemas de evacuación que evitan encharcamientos, regulan niveles freáticos y mejoran la productividad agrícola. Pueden ser superficiales o subterráneos.",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9FdQHFIqctU1Li8QDDj6M_RxbkNC8ZZxdRoT4Ewa0foGElcUgmmABg7IR3F0rKDAzM7Y&usqp=CAU",
+          color: "#d4edda"
+        },
+        olla: {
+          titulo: "Olla de Agua",
+          texto: "Es una infraestructura hidráulica diseñada para almacenar agua de lluvia o escurrimiento, son clave para gestionar el agua de manera sostenible.",
+          img: "https://storage.googleapis.com/tribunamexico/2024/07/abastecimiento-agua-lluvia-la-paz.jpeg.webp",
+          color: "#fff3cd"
+        },
+        pozo: {
+          titulo: "Pozo agrícola",
+          texto: "Un pozo es una perforación o excavación vertical en la tierra con el fin de acceder a agua subterránea de un acuífero para su uso en la agricultura. Generalmente son mecanizados con bombas. ",
+          img: "https://dojiw2m9tvv09.cloudfront.net/29449/2/M_pozoa.jpeg?148&time=1759209850",
+          color: "#e2e3e5"
+        },
+        acui: {
+          titulo: "Acuífero",
+          texto: "Son grandes reservorios naturales de agua subterránea contenidos en formaciones geológicas permeables.",
+          img: "https://institutodelagua.es/wp-content/uploads/2024/03/conagua-limites-de-acuiferos-todo-lo-que-necesitas-saber-sobre-esta-fundamental-reserva-de-agua-1536x691.png",
+          color: "#d1ecf1"
+        },
+        goteo: {
+          titulo: "Sistema de Riego por Goteo",
+          texto: " El riego por goteo es una técnica de alta eficiencia que suministra agua y nutrientes directamente a la zona radicular de las plantas en pequeñas cantidades y de manera controlada, gota a gota, a través de una red de tuberías con goteros.",
+          img: "https://www.reytlaloc.com.mx/wp-content/uploads/2022/02/006-RIEGO-POR-GOTEO.png",
+          color: "#d1ecf1"
+        },
+        solar: {
+          titulo: "Sistema Solar",
+          texto: "La energía solar puede usarse para bombear agua en sistemas de riego, reduciendo costos y favoreciendo la sostenibilidad.",
+          img: "https://portalsolar.com.ar/wp-content/uploads/2023/03/Bombeo-Solar-2-1.jpg",
+          color: "#d4edda"
+        }
+      };
+
+      const seleccion = info[seccion];
+      if (seleccion) {
+        document.getElementById("info").innerHTML = `
+          <div style="background:${seleccion.color}">
+            <div class="titulo">${seleccion.titulo}</div>
+            <p>${seleccion.texto}</p>
+            <img src="${seleccion.img}" alt="${seleccion.titulo}">
+          </div>
+        `;
+      } else {
+        document.getElementById("info").innerHTML = "Por favor selecciona una opción válida.";
+      }
+    }
+  </script>
+</body>
+</html>
